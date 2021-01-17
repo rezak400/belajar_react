@@ -1,23 +1,23 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { Home, Login, Register } from "../../pages"
+import { Login, Register, Main, CreateBlog, Home, DetailBlog } from "../../pages"
 
-const Routes = () => {
+
+
+
+const Routes = (props) => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/login">
-                    <Login/>
-                </Route>
-                <Route path="/register">
-                    <Register/>
-                </Route>
+                <Main exact path="/" component={Home} />
+                <Main path="/create-blog" component={CreateBlog} />
+                <Main path="/detail-blog" component={DetailBlog} />
+                <Route path="/login" component={Login}/>
+                <Route path="/register" component={Register}/>
             </Switch>
         </Router>
     )
 }
 
 export default Routes
+
