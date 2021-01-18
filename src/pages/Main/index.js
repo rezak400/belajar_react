@@ -11,7 +11,9 @@ const Main = ({exact, path, location,component: Component}) => {
               <Component {...props}/>
               <Footer />
             </div>
-          )}/>
+          )}>
+
+        </Route>
     )
 }
 

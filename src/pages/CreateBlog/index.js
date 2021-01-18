@@ -77,45 +77,10 @@ const CreateBlog = (props) => {
     console.log(props)
     const history = useHistory();
     return (
-        <div>
-            <h1>helo dari CreateBlog</h1>
-            <Link title="ke detail" onClick={() => history.push("/detail-blog")}/>
-            <Grid container className={classes.root} spacing={2}>
-                <Grid item xs={12}>
-                    <Grid container justify="center" spacing={spacing}>
-                    {[0, 1, 2].map((value) => (
-                        <Grid key={value} item>
-                        <Paper className={classes.paper} />
-                        </Grid>
-                    ))}
-                    </Grid>
-                </Grid>
-                <Grid item xs={12}>
-                    <Paper className={classes.control}>
-                    <Grid container>
-                        <Grid item>
-                        <FormLabel>spacing</FormLabel>
-                        <RadioGroup
-                            name="spacing"
-                            aria-label="spacing"
-                            value={spacing.toString()}
-                            onChange={handleChange}
-                            row
-                        >
-                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
-                            <FormControlLabel
-                                key={value}
-                                value={value.toString()}
-                                control={<Radio />}
-                                label={value.toString()}
-                            />
-                            ))}
-                        </RadioGroup>
-                        </Grid>
-                    </Grid>
-                    </Paper>
-                </Grid>
-            </Grid>
+        <div className="bg-indigo-600 h-screen p-10 grid grid-cols-3 gap-4">
+            <div>
+            tes
+            </div>           
         </div>
     )
 }
