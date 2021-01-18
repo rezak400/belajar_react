@@ -4,8 +4,7 @@ const Input = ({label,...rest}) => {
     return (
         <div className="input-wrapper">
             <p className="label">{label}</p>
-            <input className="input" type="password" placeholder="form input" {...rest}/>
-        
+            <input className="input" placeholder="form input" {...rest}/>
         </div>
     )
 }

@@ -63,7 +63,9 @@ export default function MenuAppBar(props) {
             <Link href="#"  color="inherit" onClick={() => {history.push("/")}}>
                 {'Home'}
             </Link>          
-            <Link href="#"  color="inherit" onClick={() => {history.push("/create-blog")}}>
+            <Link href="#"  color="inherit" onClick={() => {
+                props.onLogin()
+                history.push("/create-blog")}} >
                 {'Create'}
             </Link>            
           </Typography>

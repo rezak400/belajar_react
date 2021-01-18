@@ -75,7 +75,6 @@ const CreateBlog = (props) => {
     };
 
     console.log(props)
-    
     const history = useHistory();
     return (
         <div className="bg-indigo-300 h-screen p-10 grid grid-cols-3 gap-4">

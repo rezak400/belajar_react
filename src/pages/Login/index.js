@@ -14,9 +14,9 @@ const Login = (props) => {
            </div>
            <div className="right">
                <p className="title">Login</p>
-               <Input label="Email" placeholder="Email" />
+               <Input label="Email" placeholder="Email" type="text" />
                <Gap height={20}/>
-               <Input label="Password" placeholder="Password" />
+               <Input label="Password" placeholder="Password" type="password"/>
                <Gap height={20}/>
                <Button title="Login"  onClick={() => {
                    props.onLogin()

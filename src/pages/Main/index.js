@@ -8,7 +8,7 @@ const Main = ({exact, path, location, onLogin, isLogin, component: Component}) =
     console.log(onLogin)
     let udah_login =  <Route exact={exact} path={path} render={(props) => (
     <div className="main">      
-    <NavBar />
+    <NavBar onLogin={onLogin} />
     <Component {...props}/>
     <Footer />
   </div>
