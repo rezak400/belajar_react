@@ -1,6 +1,6 @@
 # Demo Link Here
 
-https://belajar-react-reza.vercel.app/login
+https://belajar-react-reza.vercel.app
 
 # Getting Started with Create React App
 
