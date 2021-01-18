@@ -14,7 +14,8 @@ const Login = (props) => {
            </div>
            <div className="right">
                <p className="title">Login</p>
-               <Input label="Email" placeholder="Email" type="text" />
+               <Gap height={12}/>
+               <Input label="Email" placeholder="Email" type="email" />
                <Gap height={20}/>
                <Input label="Password" placeholder="Password" type="password"/>
                <Gap height={20}/>

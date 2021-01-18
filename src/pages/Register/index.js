@@ -13,6 +13,7 @@ const Register = () => {
            </div>
            <div className="right">
                <p className="title">Register</p>
+               <Gap height={12}/>
                <Input label="Full Name" placeholder="Full Name" />
                <Gap height={20}/>
                <Input label="Email" placeholder="Email" />
