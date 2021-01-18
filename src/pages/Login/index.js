@@ -4,8 +4,9 @@ import { Input, Button, Gap, Link } from '../../components'
 import { useHistory } from "react-router-dom"
 
  
-const Login = () => {
+const Login = (props) => {
     const history = useHistory();
+    console.log(localStorage.getItem('isLogin'))
     return (
         <div className="main-page">
            <div className="left">
@@ -17,7 +18,11 @@ const Login = () => {
                <Gap height={20}/>
                <Input label="Password" placeholder="Password" />
                <Gap height={20}/>
-               <Button title="Login"  onClick={() => history.push("/")}/>
+               <Button title="Login"  onClick={() => {
+                   props.onLogin()
+                   localStorage.setItem('isLogin', "true");
+                   history.push("/") 
+               }}/>
                <Gap height={100}/>
                <Link title="Belum punya akun? Register Disini" onClick={() => history.push("/register")}/>
 

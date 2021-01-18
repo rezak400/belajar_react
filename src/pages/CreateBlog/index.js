@@ -75,9 +75,10 @@ const CreateBlog = (props) => {
     };
 
     console.log(props)
+    
     const history = useHistory();
     return (
-        <div className="bg-indigo-600 h-screen p-10 grid grid-cols-3 gap-4">
+        <div className="bg-indigo-300 h-screen p-10 grid grid-cols-3 gap-4">
             <div>
             tes
             </div>           

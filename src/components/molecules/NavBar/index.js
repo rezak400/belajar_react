@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function MenuAppBar() {
+export default function MenuAppBar(props) {
   const history = useHistory();
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
@@ -50,6 +50,7 @@ export default function MenuAppBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
 
   return (
     <div className={classes.root}>
