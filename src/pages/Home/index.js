@@ -5,8 +5,6 @@ const Home = (props) => {
     console.log(localStorage.getItem("isLogin"))
     let array_card = []
     for (var i = 0; i < 6; i++) {
-        // note: we are adding a key prop here to allow react to uniquely identify each
-        // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
         array_card.push(<CardMUI key={i} />);
     }
     return (

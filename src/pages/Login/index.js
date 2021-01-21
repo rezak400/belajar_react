@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom"
  
 const Login = (props) => {
     const history = useHistory();
-    console.log(localStorage.getItem('isLogin'))
     return (
         <div className="main-page">
            <div className="left">
@@ -20,8 +19,6 @@ const Login = (props) => {
                <Input label="Password" placeholder="Password" type="password"/>
                <Gap height={20}/>
                <Button title="Login"  onClick={() => {
-                   props.onLogin()
-                   localStorage.setItem('isLogin', "true");
                    history.push("/") 
                }}/>
                <Gap height={100}/>
