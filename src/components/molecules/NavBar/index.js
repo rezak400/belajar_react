@@ -69,7 +69,11 @@ export default function MenuAppBar(props) {
             </Link>            
           </Typography>
           {auth && (
-            <div>
+            <div >
+              <Link href="#"  color="inherit" onClick={() => {
+                  history.push("/login")}} >
+                  {'Logout'}
+              </Link>    
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"

@@ -17,12 +17,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CardMUI() {
+export default function CardMUI({...rest}) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardActionArea>
+    <Card className={classes.root} >
+      <CardActionArea {...rest}>
         <CardMedia
           className={classes.media}
           image="/static/images/cards/contemplative-reptile.jpg"

@@ -9,9 +9,9 @@ import { red } from '@material-ui/core/colors';
 const CreateBlog = (props) => {
  
     return (
-        <div className="bg-indigo-300 min-h-screen py-10 px-16">
+        <div className="bg-indigo-600 min-h-screen py-10 px-16">
            <div className="container">
-            <h1 className="font-bold text-2xl mb-2  text-white bg-blue-700 p-2 w-60 ">Create new Blog</h1>
+            <h1 className="font-bold text-2xl mb-2  text-white  p-2 w-60 ">Create new Blog</h1>
             <Input placeholder="Blog Title..."/>
             <Gap height={20} />
             <Upload /> 
