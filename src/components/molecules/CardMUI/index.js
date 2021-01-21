@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { LoginBg } from '../../../assets';
 
 const useStyles = makeStyles({
   root: {
@@ -25,16 +26,15 @@ export default function CardMUI({...rest}) {
       <CardActionArea {...rest}>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
+          image={LoginBg}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            Blog
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, repellendus aspernatur? Neque necessitatibus eaque illum eligendi natus reiciendis quas sint?
           </Typography>
         </CardContent>
       </CardActionArea>
