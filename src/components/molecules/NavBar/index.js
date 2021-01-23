@@ -60,12 +60,11 @@ export default function MenuAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.root}>
-            <Link href="#"  color="inherit" onClick={() => {history.push("/")}}>
-                {'Home'}
+            <Link href="#"  color="initial" onClick={() => {history.push("/")}}>
+                Home
             </Link>          
-            <Link href="#"  color="inherit" onClick={() => {
-                history.push("/create-blog")}} >
-                {'Create'}
+            <Link href="#"  color="initial" onClick={() => {history.push("/create-blog")}} >
+                Create
             </Link>            
           </Typography>
           {auth && (
