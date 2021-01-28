@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { CardMUI, Gap } from '../../components'
 import { useHistory } from "react-router-dom"
 import axios from "axios"
+import { CircularProgress } from '@material-ui/core'
 
 const Home = (props) => {
     //! LETS FUCKING DOO FETCHHH, FINALYY
+    const [isLoading, setLoading ] = useState(false)
     let [dataBlog,setDataBlog] = useState([])
     useEffect(() => {  //? pelajari useEffect
+        setLoading(true)
         axios.get("https://mern-blog-reza.herokuapp.com/v1/blog")
         .then(res => {
             const resApi = res.data
             //! ambil lagi didalemnya yaitu data
             setDataBlog(resApi.data)
+            setLoading(false)
         })
         .catch( err => console.log({err}))
     }, []) //? dikosongin bisar gk ngefetch trs
@@ -28,17 +32,28 @@ const Home = (props) => {
     let handleClick = () => {
         history.push("/detail-blog")
     }
+
+    let display;
+    if(isLoading == true){
+        display = (
+            <div className="flex items-center justify-center pt-44">
+                <CircularProgress size={80} /> 
+            </div>
+        )
+    }else{
+        display = (
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-10 py-10 px-16">
+                {dataBlog.map(blog => {
+                return <CardMUI title={blog.title}  onClick={handleClick} image={`https://mern-blog-reza.herokuapp.com/${blog.image}`} content={blog.content}/>
+                 })}
+            </div>
+        )
+    }
     
     return (
-        <div className=" bg-indigo-600">
-            <div className="container align-center">
-                <div className="grid md:grid-cols-3 grid-cols-1 gap-10 py-10 px-16">
-                {console.log(`liat data blog di html`,dataBlog)}
-                {/* <CardMUI title="Judul" id="1" onClick={handleClick} title="Judul" /> */}
-                {dataBlog.map(blog => {
-                    return <CardMUI title={blog.title}  onClick={handleClick} image={`https://mern-blog-reza.herokuapp.com/${blog.image}`} />
-                })}
-                </div>
+        <div className=" bg-indigo-600 ">
+            <div className="container align-center min-h-screen">
+                {display}
             </div>
         </div>
     )

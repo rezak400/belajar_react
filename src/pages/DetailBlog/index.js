@@ -6,8 +6,8 @@ const DetailBlog = () => {
         <div class="body-font bg-white text-black">
             <div class=" pb-10 sm:px-0 lg:py-10 mx-auto flex flex-col ">
                 <div class="lg:w-5/6 mx-auto">
-                <div class="h-64 overflow-hidden">
-                <img alt="content" class="object-cover object-center h-full w-full" src={LoginBg} />
+                    <div class="h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src={LoginBg} />
                 </div>
 
                 <div class="flex flex-col sm:flex-row mt-10 px-10 sm:px-8 md:px-0">
@@ -24,9 +24,11 @@ const DetailBlog = () => {
                         <p class="text-sm">Cogan Pondok Gede yang bercita cita menjadi manusia</p>
                     </div>
                     </div>
-                    <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left sm:text-left">
+                    <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left">
                     <h1 className="text-2xl mb-5 font-bold">Judulnya Ea Mamang</h1>
-                    <p class="leading-relaxed text-lg mb-4">Meggings portland fingerstache lyft, post-ironic fixie man bun banh mi umami everyday carry hexagon locavore direct trade art party. Locavore small batch listicle gastropub farm-to-table lumbersexual salvia messenger bag. Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher. Portland 90's scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn.</p>
+                    <p class="leading-relaxed text-lg mb-4">
+                    Didorong keinginan untuk mendapatkan penghasilan lebih, Paidi akhirnya memutuskan untuk bertani Jahe. Ia berharap menanam dan menjual tumbuhan herbal berkhasiat besar ini adalah jalannya menuju hidup yang lebih baik. Namun dengan bekal pengetahuan yang terbatas, kerja keras Paidi tidak membawa hasil yang diinginkan. "Saya tidak tahu metode bercocok tanam yang paling efektif dan tidak punya jaringan yang cukup untuk memasarkan Jahe hasil panen saya", kenangnya.
+                    </p>
                     <a class="text-indigo-500 inline-flex items-center">Learn More
                         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>

@@ -14,8 +14,13 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 200,
   },
+  text: {
+    minHeight : 100,
+    maxHeight : 100,
+    overflow: "hidden"
+  }
 });
 
 export default function CardMUI(props) {
@@ -25,8 +30,8 @@ export default function CardMUI(props) {
   console.log(`liat props`, props)
 
   return (
-    <Card className={classes.root} onClick={onClick} >
-      <CardActionArea>
+    <Card className={classes.root} >
+      <CardActionArea  onClick={onClick}>
         <CardMedia
           className={classes.media}
           image={image}
@@ -36,8 +41,8 @@ export default function CardMUI(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, repellendus aspernatur? Neque necessitatibus eaque illum eligendi natus reiciendis quas sint?
+          <Typography variant="body2" color="textSecondary" component="p" className={classes.text} >
+              {content}
           </Typography>
         </CardContent>
       </CardActionArea>
