@@ -18,20 +18,23 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CardMUI({...rest}) {
+export default function CardMUI(props) {
   const classes = useStyles();
+  const { key, onClick, title, image, content } = props
+  console.log(key)
+  console.log(`liat props`, props)
 
   return (
-    <Card className={classes.root} >
-      <CardActionArea {...rest}>
+    <Card className={classes.root} onClick={onClick} >
+      <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={LoginBg}
+          image={image}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Blog
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, repellendus aspernatur? Neque necessitatibus eaque illum eligendi natus reiciendis quas sint?
