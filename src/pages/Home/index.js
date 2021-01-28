@@ -14,7 +14,7 @@ const Home = (props) => {
             setDataBlog(resApi.data)
         })
         .catch( err => console.log({err}))
-    }, [])
+    }, [dataBlog])
 
     const history = useHistory();
 
