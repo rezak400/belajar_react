@@ -14,7 +14,7 @@ const Home = (props) => {
             setDataBlog(resApi.data)
         })
         .catch( err => console.log({err}))
-    }, [dataBlog])
+    }, []) //? dikosongin bisar gk ngefetch trs
 
     const history = useHistory();
 
