@@ -5,12 +5,17 @@ import axios from "axios"
 import { CircularProgress } from '@material-ui/core'
 
 const Home = (props) => {
+    let urlLocal = "http://192.168.0.17:4000"
+    let urlServer = "https://mern-blog-reza.herokuapp.com"
+    const urlAPI = `https://mern-blog-reza.herokuapp.com`
+    
+
     //! LETS FUCKING DOO FETCHHH, FINALYY
     const [isLoading, setLoading ] = useState(false)
     let [dataBlog,setDataBlog] = useState([])
     useEffect(() => {  //? pelajari useEffect
         setLoading(true)
-        axios.get("http://192.168.0.17:4000/v1/blog")
+        axios.get(`${urlAPI}/v1/blog`)
         .then(res => {
             const resApi = res.data
             //! ambil lagi didalemnya yaitu data
@@ -44,7 +49,7 @@ const Home = (props) => {
         display = (
             <div className="">
                 {dataBlog.map(blog => {
-                return <CardMUI title={blog.title}  onClick={handleClick} image={`http://192.168.0.17:4000/${blog.image}`} content={blog.content}/>
+                return <CardMUI title={blog.title}  onClick={handleClick} image={`${urlAPI}/${blog.image}`} content={blog.content}/>
                  })} 
             </div>
         )
