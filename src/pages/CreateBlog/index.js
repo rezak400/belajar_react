@@ -7,7 +7,7 @@ import { red } from '@material-ui/core/colors';
 
 
 const CreateBlog = (props) => {
- 
+    
     return (
         <div className="bg-indigo-600 min-h-screen py-10 px-16">
            <div className="container">

@@ -1,31 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import { LoginBg } from '../../../assets';
+import { useHistory } from "react-router-dom"
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 200,
-  },
-  text: {
-    minHeight : 100,
-    maxHeight : 100,
-    overflow: "hidden"
-  }
-});
+
 
 export default function CardMUI(props) {
-  const classes = useStyles();
-  const { key, onClick, title, image, content } = props
+  const history = useHistory()
+
+  const { key, onClick, title, image, content, _id } = props
   console.log(key)
   console.log(`liat props`, props)
 
@@ -56,7 +39,7 @@ export default function CardMUI(props) {
       </Card> */}
 
       {/* //! tailblock */}
-      <section class="body-font overflow-hidden cursor-pointer hover:opacity-80" onClick={onClick}>
+      <section class="body-font overflow-hidden cursor-pointer hover:opacity-80" onClick={() => { history.push(`/detail-blog/${_id}`)}}>
         <div class="container px-5 py-12 mx-auto ">
           <div class="-my-8 divide-y-2 divide-gray-100">
             <div class="flex flex-wrap md:flex-nowrap bg-white">
@@ -64,7 +47,7 @@ export default function CardMUI(props) {
                 <img class="lg:h-48 md:h-36  h-48 object-cover object-center" src={image} alt="gambar"></img>
               </div>
               <div class="md:flex-grow p-5">
-                <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-primary">{title}</h2>
+                <h2 class="text-2xl font-semibold text-gray-900 title-font mb-2 font-primary">{title}</h2>
                 <p class="leading-relaxed max-h-32 min-h-32 md:max-h-24 overflow-hidden font-secondary block">
                  {content}
                  lorem60
