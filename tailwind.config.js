@@ -6,6 +6,10 @@ module.exports = {
       container: {
         center: true,
       },
+      fontFamily: {
+        primary: ['Poppins'],
+        secondary: ["Raleway"]
+      },
     },
   },
   variants: {

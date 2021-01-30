@@ -10,7 +10,7 @@ const Home = (props) => {
     let [dataBlog,setDataBlog] = useState([])
     useEffect(() => {  //? pelajari useEffect
         setLoading(true)
-        axios.get("https://mern-blog-reza.herokuapp.com/v1/blog")
+        axios.get("http://192.168.0.17:4000/v1/blog")
         .then(res => {
             const resApi = res.data
             //! ambil lagi didalemnya yaitu data
@@ -40,19 +40,19 @@ const Home = (props) => {
                 <CircularProgress size={80} /> 
             </div>
         )
-    }else{
+    }else{ 
         display = (
-            <div className="grid md:grid-cols-3 grid-cols-1 gap-10 py-10 px-16">
+            <div className="">
                 {dataBlog.map(blog => {
-                return <CardMUI title={blog.title}  onClick={handleClick} image={`https://mern-blog-reza.herokuapp.com/${blog.image}`} content={blog.content}/>
-                 })}
+                return <CardMUI title={blog.title}  onClick={handleClick} image={`http://192.168.0.17:4000/${blog.image}`} content={blog.content}/>
+                 })} 
             </div>
         )
     }
     
     return (
         <div className=" bg-indigo-600 ">
-            <div className="container align-center min-h-screen">
+            <div className="container align-center min-h-screen py-2">
                 {display}
             </div>
         </div>
