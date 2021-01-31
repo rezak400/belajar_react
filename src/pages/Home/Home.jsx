@@ -3,27 +3,36 @@ import { CardMUI, Gap } from '../../components'
 import { useHistory } from "react-router-dom"
 import axios from "axios"
 import { CircularProgress } from '@material-ui/core'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Home = (props) => {
-
-    let urlLocal = "http://192.168.0.17:4000"
-    let urlServer = "https://mern-blog-reza.herokuapp.com"
-    const urlAPI = `https://mern-blog-reza.herokuapp.com`
     
+    //! react-redux
+    //? mengaakses store menggunakan useSelector(), bisa mengambil spesifik reducer
+    const {URL_API} = useSelector(state => state.GlobalReducer); //? mengambil spesifik reducer 
+    console.log(`LIAT URL API`, URL_API);
+    //? untuk memakai action pada reducee
+    const dispatch = useDispatch()
+
 
     //! LETS FUCKING DOO FETCHHH, FINALYY
     const [isLoading, setLoading ] = useState(false)
     let [dataBlog,setDataBlog] = useState([])
+
     useEffect(() => {  //? pelajari useEffect
         setLoading(true)
-        axios.get(`${urlServer}/v1/blog`)
+        //! url api dari store redux
+        axios.get(`${URL_API}/v1/blog`)
         .then(res => {
             const resApi = res.data
             //! ambil lagi didalemnya yaitu data
             setDataBlog(resApi.data)
             setLoading(false)
         })
-        .catch( err => console.log({err}))
+        .catch( err => {
+            alert(err)
+            console.log(err)
+        })
     }, []) //? dikosongin bisar gk ngefetch trs
 
     const history = useHistory();
@@ -53,7 +62,7 @@ const Home = (props) => {
                 return <CardMUI 
                         title={blog.title}  
                         onClick={handleClick} 
-                        image={`${urlServer}/${blog.image}`} 
+                        image={`${URL_API}/${blog.image}`} 
                         content={blog.content}
                         _id={blog._id}
                         />

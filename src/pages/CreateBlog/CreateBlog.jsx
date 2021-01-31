@@ -4,6 +4,7 @@ import { useHistory, Redirect } from "react-router-dom"
 import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import { red } from '@material-ui/core/colors';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 
 
@@ -15,30 +16,29 @@ const CreateBlog = (props) => {
     const [imagePreview, setImagePreview] = useState(null);
 
 
-    // console.log({title,content,image})
-
-    let urlLocal = "http://192.168.0.17:4000"
-    let urlServer = "https://mern-blog-reza.herokuapp.com"
-    const urlAPI = `https://mern-blog-reza.herokuapp.com`
-
+    //! ambil url api dari store
+    const {URL_API} = useSelector(state => state.GlobalReducer)
+    console.log(`LIAT API`, URL_API)
+    
     const onSubmit = () => {
         console.log({title,content,image})
-
         const data = new FormData()
         data.append("title",title)
         data.append("content",content)
         data.append("image", image)
 
-        console.log(`data Form data`, data)
-        
-        axios.post(`${urlServer}/v1/blog/post`,data,{
+        console.log(`data yg dikirim`, data)     
+        axios.post(`${URL_API}/v1/blog/post`,data,{
             headers : {
                 "content-type" : "multipart/form-data"
             }
         }).then( res => {
-            console.log(res)
+            console.log(`kalo sukses muncul ini`, res)
             history.push(`/detail-blog/${res.data.data._id}`)
-        }).catch(err => err)
+        }).catch(err => {
+            alert(err)
+            console.log(`kalo error muncul ini`, err)
+        })
     }
 
     const onImageUpload = (e) => {
