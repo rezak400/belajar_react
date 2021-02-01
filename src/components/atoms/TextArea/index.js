@@ -1,9 +1,10 @@
 import React from 'react'
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 const TextArea = ({...rest}) => {
     return (
         <div>
-            <textarea {...rest} className="w-full h-32 p-3"></textarea>
+            <TextareaAutosize aria-label="minimum height" rowsMin={10}  {...rest}/>
         </div>
     )
 }

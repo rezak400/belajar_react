@@ -63,8 +63,8 @@ export default function MenuAppBar(props) {
             <Link href="#"  color="initial" onClick={() => {history.push("/")}}>
                 Home
             </Link>          
-            <Link href="#"  color="initial" onClick={() => {history.push("/create-blog")}} >
-                Create
+            <Link href="#"  color="initial" onClick={() => {history.push("/create-blog")}} className="bg-green-500 py-2 px-5 ml-10 hover:bg-green-300" >
+                Create Blog Here
             </Link>            
           </Typography>
           {auth && (
