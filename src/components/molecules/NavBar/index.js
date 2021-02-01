@@ -54,16 +54,16 @@ export default function MenuAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className="pl-5">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography className={classes.root}>
             <Link href="#"  color="initial" onClick={() => {history.push("/")}}>
                 Home
             </Link>          
-            <Link href="#"  color="initial" onClick={() => {history.push("/create-blog")}} className="bg-green-500 py-2 px-5 ml-10 hover:bg-green-300" >
+            <Link href="#"  color="initial" onClick={() => {history.push("/create-blog")}} className="bg-green-500 py-2 px-5 hover:bg-green-300 inline-block sm:inline" >
                 Create Blog Here
             </Link>            
           </Typography>
@@ -73,7 +73,7 @@ export default function MenuAppBar(props) {
                   history.push("/login")}} >
                   {'Logout'}
               </Link>    
-              <IconButton
+              {/* <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
@@ -81,7 +81,7 @@ export default function MenuAppBar(props) {
                 color="inherit"
               >
                 <AccountCircle />
-              </IconButton>
+              </IconButton> */}
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

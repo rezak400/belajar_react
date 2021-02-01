@@ -14,11 +14,11 @@ const Login = (props) => {
            <div className="right">
                <p className="title">Login</p>
                <Gap height={12}/>
-               <Input label="Email" placeholder="Email" type="email" />
+               <Input label="Email" placeholder="Email" type="email" className="input w-full p-2 rounded" />
                <Gap height={20}/>
-               <Input label="Password" placeholder="Password" type="password"/>
+               <Input label="Password" placeholder="Password" type="password" className="input w-full p-2 rounded"/>
                <Gap height={20}/>
-               <Button title="Login"  onClick={() => {
+               <Button className="button" title="Login"  onClick={() => {
                    history.push("/") 
                }}/>
                <Gap height={100}/>

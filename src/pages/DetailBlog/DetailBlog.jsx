@@ -39,7 +39,7 @@ const DetailBlog = (props) => {
                                 </div>
             
                                 {/* //! Content */}
-                                <div class="flex flex-col sm:flex-row mt-10 px-10 sm:px-8 md:px-0">
+                                <div class="flex flex-col sm:flex-row mt-10 px-6 sm:px-8 md:px-0">
 
                                     {/* //! Left  */}
                                     <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
@@ -57,7 +57,7 @@ const DetailBlog = (props) => {
                                     </div>
 
                                     {/* //! right */}
-                                    <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left break-all">
+                                    <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left break-words">
                                         <h1 className="text-2xl mb-5 font-bold">{title}</h1>
                                         <p class="leading-relaxed text-lg mb-4 whitespace-pre-line">
                                             {content}

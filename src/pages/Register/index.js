@@ -14,13 +14,13 @@ const Register = () => {
            <div className="right">
                <p className="title">Register</p>
                <Gap height={12}/>
-               <Input label="Full Name" placeholder="Full Name" />
+               <Input label="Full Name" placeholder="Full Name" className="input w-full p-2 rounded" />
                <Gap height={20}/>
-               <Input label="Email" placeholder="Email" />
+               <Input label="Email" placeholder="Email" className="input w-full p-2 rounded"/>
                <Gap height={20}/>
-               <Input label="Password" placeholder="Password" />
+               <Input label="Password" placeholder="Password" className="input w-full p-2 rounded"/>
                <Gap height={20}/>
-               <Button title="Register" />
+               <Button title="Register" className="button" onClick={() => history.push("/login")} />
                <Gap height={100}/>
                <Link title="Kembali ke Login" onClick={() => history.push("/login")}/>
 

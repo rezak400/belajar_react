@@ -50,11 +50,11 @@ export default function CardMUI(props) {
 
               {/* //! right */}
               <div class="md:flex-grow p-5 break-words">
-                {/* //! penting klo gkada spasi pake breal all */}
-                <div className="break-all">
+                {/* //! penting klo gkada spasi pake breal word */}
+                <div className="inline-block break-words">
                   <h2 class="text-2xl font-semibold text-gray-900 title-font mb-2 font-primary">{title}</h2>
-                  <p class="leading-relaxed  max-h-32 min-h-32 md:max-h-24  font-secondary block" >
-                   {content.substr(0, 300)+ " . . . ."}
+                  <p class="leading-relaxed  max-h-32 min-h-32 md:max-h-24  font-secondary" >
+                   {content.substr(0, 50)+ " . . . ."}
                   </p>
                   <a class="text-indigo-500 inline-flex items-center mt-4">Learn More
                     <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">

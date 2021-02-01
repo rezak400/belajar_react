@@ -67,7 +67,7 @@ const CreateBlog = (props) => {
 
     //! Isi Modal
     const modal_content = (
-        <div className="absolute bg-indigo-700 w-64 md:w-96 top-20 left-0 right-0 m-auto p-10 text-white text-sm md:text-lg font-primary">
+        <div className="absolute bg-indigo-700 w-64 md:w-96 top-20 left-0 right-0 m-auto p-10 text-white text-sm md:text-lg font-secondary">
            <p className="text-center">Anda sudah yakin? <span className="block">Kali aja ada yang salah..</span></p>
            <div className="flex justify-evenly mt-4 text-xs md:text-base">
                <button onClick={onSubmit} className="py-2 px-6 bg-green-400 rounded text-white">YES</button>
