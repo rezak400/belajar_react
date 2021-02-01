@@ -4,7 +4,7 @@ import { createStore, combineReducers } from "redux"
 //! State Global
 const initialStateGlobal = {
     //! ini main URL, GANTI URL DISINI    
-    URL_API : `http://192.168.0.17:4000`,
+    URL_API : `https://mern-blog-reza.herokuapp.com`,
 
     //? INI CUMAN FYI AJA, JGN GANTI2, AMBIL AJA
     URL_CONFIG : `http://192.168.0.17:4000`,
