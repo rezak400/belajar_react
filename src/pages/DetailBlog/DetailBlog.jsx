@@ -31,10 +31,10 @@ const DetailBlog = (props) => {
     if(data.author){
         return (
             <div class="body-font bg-white text-black">
-                <div class=" pb-10 sm:px-0 lg:py-10 mx-auto flex flex-col ">
-                            <div class="lg:w-5/6 mx-auto">
+                <div class=" pb-10 px-0 lg:py-10 mx-auto flex flex-col ">
+                            <div class="w-full lg:w-5/6 mx-auto">
                                 {/* //! Image */}
-                                <div class="h-64 overflow-hidden bg-gray-300">
+                                <div class="h-64  bg-gray-300">
                                     <img alt="gambar" class="object-cover object-center h-full w-full" src={`${URL_API}/${image}`} />
                                 </div>
             
@@ -57,7 +57,7 @@ const DetailBlog = (props) => {
                                     </div>
 
                                     {/* //! right */}
-                                    <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left break-words">
+                                    <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-left">
                                         <h1 className="text-2xl mb-5 font-bold">{title}</h1>
                                         <p class="leading-relaxed text-lg mb-4 whitespace-pre-line">
                                             {content}
