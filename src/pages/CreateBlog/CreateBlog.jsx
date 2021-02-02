@@ -90,7 +90,7 @@ const CreateBlog = (props) => {
         </div>
     );
 
-        if(!isLoading){
+        if(true){
             return (
                 <div className="bg-indigo-600 min-h-screen py-10 md:px-16 px-5 font-secondary font-bold">
                    <div className="container">
@@ -112,20 +112,18 @@ const CreateBlog = (props) => {
                         >
                             {modal_content}
                     </Modal>
-                   </div>
-                </div>
-            )
-        }else{
-            return (
-               <div className="min-h-screen">
-                   <Modal
+
+                    {/* //! Modal loading  */}
+                    <Modal
                             open={isLoading}
+                            onClose={isLoading}
                             aria-labelledby="simple-modal-title"
                             aria-describedby="simple-modal-description"
                         >
                             {loading_content}
                     </Modal>
-               </div>
+                   </div>
+                </div>
             )
         }
     
