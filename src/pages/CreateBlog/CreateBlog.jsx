@@ -16,6 +16,7 @@ const CreateBlog = (props) => {
     const [image, setImage] = useState("");
     const [imagePreview, setImagePreview] = useState(null);
     const [open, setOpen] = useState(false);
+    const [isLoading, setLoading] = useState(false)
 
 
     //! ambil url api dari store
@@ -23,6 +24,10 @@ const CreateBlog = (props) => {
     console.log(`LIAT API`, URL_API)
     
     const onSubmit = () => {
+        //! tutup modal ketika pencet YES
+        setOpen(false)
+        setLoading(true)
+        //! logic post API
         console.log({title,content,image})
         const data = new FormData()
         data.append("title",title)
@@ -36,8 +41,10 @@ const CreateBlog = (props) => {
             }
         }).then( res => {
             console.log(`kalo sukses muncul ini`, res)
+            setLoading(false)
             history.push(`/detail-blog/${res.data.data._id}`)
         }).catch(err => {
+            setLoading(false)
             alert(
             `
             Jangan lupa isi semua inputnya ya
@@ -73,34 +80,54 @@ const CreateBlog = (props) => {
                <button onClick={onSubmit} className="py-2 px-6 bg-green-400 rounded text-white">YES</button>
                <button onClick={handleClose} className="py-2 px-6 bg-red-400 rounded text-white">NO</button>
            </div>
-
         </div>
     );
 
-        return (
-            <div className="bg-indigo-600 min-h-screen py-10 md:px-16 px-5 font-secondary font-bold">
-               <div className="container">
-                <h1 className="font-medium text-2xl mb-2  text-white py-3 w-60 font-primary">Create new Blog</h1>
-                <Input onChange={(e) => setTitle(e.target.value)} placeholder="Blog Title..." className="font-medium input text-xl p-3 w-full rounded"/>
-                <Gap height={20} />
-                {/* //! menangani event file agak berbeda */ }
-                <Upload onChange={(e) => onImageUpload(e)} img={imagePreview} /> 
-                <Gap height={20} />
-                <TextArea onChange={(e) => setContent(e.target.value)} placeholder="Pada suatu hari..." className="w-full p-3 rounded font-medium whitespace-pre-line" />
-                <Gap height={20} />
+    //! Isi Loading 
+    const loading_content = (
+        <div className="absolute bg-indigo-700 w-64 md:w-96 top-20 left-0 right-0 m-auto p-10 text-white text-sm md:text-lg font-secondary">
+            <p className="text-center">Lagi Loading <span className="block">Sabar.......</span></p>
+        </div>
+    );
 
-                <Button className="font-bold button" title="SAVE" onClick={handleOpen}/>
-                <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="simple-modal-title"
-                        aria-describedby="simple-modal-description"
-                    >
-                        {modal_content}
-                </Modal>
+        if(!isLoading){
+            return (
+                <div className="bg-indigo-600 min-h-screen py-10 md:px-16 px-5 font-secondary font-bold">
+                   <div className="container">
+                    <h1 className="font-medium text-2xl mb-2  text-white py-3 w-60 font-primary">Create new Blog</h1>
+                    <Input onChange={(e) => setTitle(e.target.value)} placeholder="Blog Title..." className="font-medium input text-xl p-3 w-full rounded"/>
+                    <Gap height={20} />
+                    {/* //! menangani event file agak berbeda */ }
+                    <Upload onChange={(e) => onImageUpload(e)} img={imagePreview} /> 
+                    <Gap height={20} />
+                    <TextArea onChange={(e) => setContent(e.target.value)} placeholder="Pada suatu hari..." className="w-full p-3 rounded font-medium whitespace-pre-line" />
+                    <Gap height={20} />
+    
+                    <Button className="font-bold button" title="SAVE" onClick={handleOpen}/>
+                    <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="simple-modal-title"
+                            aria-describedby="simple-modal-description"
+                        >
+                            {modal_content}
+                    </Modal>
+                   </div>
+                </div>
+            )
+        }else{
+            return (
+               <div className="min-h-screen">
+                   <Modal
+                            open={isLoading}
+                            aria-labelledby="simple-modal-title"
+                            aria-describedby="simple-modal-description"
+                        >
+                            {loading_content}
+                    </Modal>
                </div>
-            </div>
-        )
+            )
+        }
     
 }
 

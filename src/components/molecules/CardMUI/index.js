@@ -45,7 +45,7 @@ export default function CardMUI(props) {
             <div class="flex flex-wrap md:flex-nowrap bg-white">
               {/* //!left  */}
               <div class="p-4 w-full md:w-64 flex-shrink-0 flex flex-col">
-                <img class="lg:h-48 md:h-36  h-48 object-cover object-center" src={image} alt="gambar"></img>
+                <img class="lg:h-48 md:h-36  h-48 object-cover object-center bg-gray-300" src={image} alt="gambar"></img>
               </div>
 
               {/* //! right */}

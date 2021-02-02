@@ -62,7 +62,7 @@ const Home = (props) => {
                 return <CardMUI 
                         title={blog.title}  
                         onClick={handleClick} 
-                        image={`${URL_API}/${blog.image}`} 
+                        image={`${URL_API}/${blog.image ? blog.image : '1612192286642-pulici_3.jpg' }`} 
                         content={blog.content}
                         _id={blog._id}
                         />

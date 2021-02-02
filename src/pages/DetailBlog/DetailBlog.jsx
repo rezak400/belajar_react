@@ -34,8 +34,8 @@ const DetailBlog = (props) => {
                 <div class=" pb-10 sm:px-0 lg:py-10 mx-auto flex flex-col ">
                             <div class="lg:w-5/6 mx-auto">
                                 {/* //! Image */}
-                                <div class="h-64 overflow-hidden">
-                                    <img alt="content" class="object-cover object-center h-full w-full" src={`${URL_API}/${image}`} />
+                                <div class="h-64 overflow-hidden bg-gray-300">
+                                    <img alt="gambar" class="object-cover object-center h-full w-full" src={`${URL_API}/${image}`} />
                                 </div>
             
                                 {/* //! Content */}
