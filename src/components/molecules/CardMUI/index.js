@@ -45,7 +45,7 @@ export default function CardMUI(props) {
             <div class="flex flex-wrap md:flex-nowrap bg-white p-4">
               {/* //!left  */}
               <div class="w-full md:w-64 flex-shrink-0 flex flex-col relative">
-                <img class="absolute lg:h-48 md:h-36  h-48 object-cover object-center bg-indigo-300 z-0 left-0 top-0 w-full" src="https://mern-blog-reza.herokuapp.com/images/1612190412909-pulici_1.jpg" alt="gambar"></img>
+                <img class="absolute lg:h-48 md:h-36  h-48 object-cover object-center bg-indigo-300 z-0 left-0 top-0 w-full" src="https://mern-blog-reza.herokuapp.com/images/1612192363845-pulici_1.jpg" alt="gambar"></img>
                 <img class="lg:h-48 md:h-36  h-48 object-cover object-center z-10" src={image} alt="gambar default"></img>
               </div>
 
