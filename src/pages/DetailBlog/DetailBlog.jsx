@@ -5,19 +5,27 @@ import axios from 'axios'
 import { CircularProgress } from '@material-ui/core'
 import { useSelector } from 'react-redux'
 import { Link, Upload, TextArea, Input, Button, Gap } from '../../components'
+import { Modal } from '@material-ui/core';
 
 
 const DetailBlog = (props) => {
     const history = useHistory() 
+    const {id} = props.match.params
+
     
     //! ambil url api dari store
     const {URL_API} = useSelector(state => state.GlobalReducer)
     console.log(`LIAT API`, URL_API)
 
+    //! buka tutup modal
+    const [open, setOpen] = useState(false);
+    const [password, setPassword] = useState("");
+    console.log(`liat password`, password)
+
     const [ data, setData ] = useState({})
     const { title, content, author, image, createdAt } = data
     useEffect(()=>{
-        const {id} = props.match.params
+        console.log(`liat id param`, id)
         axios.get(`${URL_API}/v1/blog/${id}`)
         .then( res => {
             console.log(`data API`, res )
@@ -28,6 +36,36 @@ const DetailBlog = (props) => {
             console.log(err)
         })
     },[])
+
+      //! buka tutup modal
+      const handleOpen = () => {
+        setOpen(true);
+      };
+      const handleClose = () => {
+        setOpen(false);
+      };
+      const handleSubmit = () => {
+          if(password == "rezaganteng"){
+              history.push(`/edit-blog/rahasia/${id}`)
+          }else{
+              alert(`password salah`)
+          }
+      }
+   
+
+      
+    //! Isi Modal
+     const modal_content = (
+        <div className="absolute bg-indigo-700 w-64 md:w-96 top-20 left-0 right-0 m-auto p-10 text-white text-sm md:text-lg font-secondary">
+           <p className="text-center">Masukkan Password Admin</p>
+           <Input onChange={e => setPassword(e.target.value)} placeholder="Password" className="font-medium input  p-3 w-full rounded text-black text-sm mt-3" type="password"/>
+           <div className="flex justify-evenly mt-4 text-xs md:text-base">
+               <button onClick={handleSubmit}  className="py-2 px-6 bg-green-400 rounded text-white">SUBMIT</button>
+               <button onClick={handleClose} className="py-2 px-6 bg-red-400 rounded text-white">NO</button>
+           </div>
+        </div>
+    );
+
     if(data.author){
         return (
             <div class="body-font bg-white text-black">
@@ -62,7 +100,15 @@ const DetailBlog = (props) => {
                                         <p class="leading-relaxed text-lg mb-4 whitespace-pre-line">
                                             {content}
                                         </p>
-                                        <Button title="Edit" className="button mt-10" onClick={() => history.push("/edit-blog/tes")} />
+                                        <Button title="Edit" className="button mt-10" onClick={() => handleOpen()} />
+                                        <Modal
+                                                open={open}
+                                                onClose={handleClose}
+                                                aria-labelledby="simple-modal-title"
+                                                aria-describedby="simple-modal-description"
+                                            >
+                                                {modal_content}
+                                        </Modal>
                                     </div>
                                 </div>
 

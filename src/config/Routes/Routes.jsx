@@ -9,7 +9,7 @@ const Routes = (props) => {
                 <Main exact path="/" component={Home} />
                 <Main path="/create-blog" component={CreateBlog} />
                 <Main path="/detail-blog/:id" component={DetailBlog} />
-                <Main path="/edit-blog/:id" component={EditBlog} />
+                <Main path="/edit-blog/rahasia/:id" component={EditBlog} />
                 {/* <Route path="/login">
                     <Login  />
                 </Route> */}
