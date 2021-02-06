@@ -46,7 +46,7 @@ const DetailBlog = (props) => {
     };
     const handleSubmit = () => {
         if (password == "rezagantengbanget") {
-            history.push(`/edit-blog/rahasia/${id}`)
+            history.push(`/edit-blog/rahasiakitabersama/${id}`)
         } else {
             alert(`password salah`)
         }
